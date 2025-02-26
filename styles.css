@@ -11,9 +11,9 @@
     height: 250px;
     top: 10%;
     left: calc(50% - 100px);
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
-    animation: Run 30s linear;
+    transform-style: preserve-3d; /* Adds a Z axis to the slider element in order to exist in 3d space */
+    transform: perspective(1000px); /* Distance from the element to the bottom of the screen along the Z axis */
+    animation: Run 30s linear; /* Takes 30 seconds to do a full loop, can be further customized */
 }
 
 @keyframes Run{
@@ -31,6 +31,7 @@
     inset: 0 0 0 0;
     transform: 
         rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) *1deg ))
+        /* Position each of the 8 items on the 360 degrees 3d circle, each item is 45 degrees apart */
         translateZ(550px);
 }    
 
